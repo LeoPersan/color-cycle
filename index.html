@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <title>Transição de Cores em CSS </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #caleidoscopio {
+            position: relative;
+            padding-bottom: 30%;
+            border: 1px solid #000000;
+        }
+
+        .output {
+            height: calc(1.5em + .75rem + 2px);
+            border: 1px solid #000000;
+        }
+
+        @keyframes colorchange {
+            0% {
+                background-color: #f4e749;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Transição de Cores em CSS </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://leopersan.github.io/">LeoPersan</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://github.com/LeoPersan/">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="mt-5">Transição de Cores em CSS </h1>
+                <p class="lead">Use os campos abaixo para definir as cores.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <ul class="nav nav-tabs nav-fill" id="methods" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="range-tab" data-toggle="tab" href="#range" role="tab"
+                            aria-controls="range" aria-selected="true">Barras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="manual-tab" data-toggle="tab" href="#manual" role="tab"
+                            aria-controls="manual" aria-selected="false">Hexadecimal</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="methodsContent">
+                    <div class="tab-pane fade show active set-caleidoscopio" id="range" role="tabpanel">
+                        <div class="row color" role="initial">
+                            <div class="col-sm-4 col-lg-3 form-group">
+                                <input type="text" class="form-control input" placeholder="Vermelho Inicial" value="10">
+                            </div>
+                            <div class="col-sm-4 col-lg-3 form-group">
+                                <input type="text" class="form-control input" placeholder="Verde Inicial" value="80">
+                            </div>
+                            <div class="col-sm-4 col-lg-3 form-group">
+                                <input type="text" class="form-control input" placeholder="Azul Inicial" value="C4">
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                        <div class="row color" role="incremental">
+                            <div class="col-sm-4 col-lg-3 form-group">
+                                <input type="text" class="form-control input" placeholder="Vermelho Adicional" value="15">
+                            </div>
+                            <div class="col-sm-4 col-lg-3 form-group">
+                                <input type="text" class="form-control input" placeholder="Verde Adicional" value="15">
+                            </div>
+                            <div class="col-sm-4 col-lg-3 form-group">
+                                <input type="text" class="form-control input" placeholder="Azul Adicional" value="80">
+                            </div>
+                            <div class="col-lg-3 form-group">
+                                <div class="output"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show set-caleidoscopio" id="manual" role="tabpanel">
+                        <div class="col-12">
+                            <div class="row color" role="initial">
+                                <div class="col-sm-4 col-lg-3 form-group">
+                                    <input type="range" min="0" max="255" class="form-control input" placeholder="Vermelho Inicial" value="10">
+                                </div>
+                                <div class="col-sm-4 col-lg-3 form-group">
+                                    <input type="range" min="0" max="255" class="form-control input" placeholder="Verde Inicial" value="80">
+                                </div>
+                                <div class="col-sm-4 col-lg-3 form-group">
+                                    <input type="range" min="0" max="255" class="form-control input" placeholder="Azul Inicial" value="C4">
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <div class="output"></div>
+                                </div>
+                            </div>
+                            <div class="row color" role="incremental">
+                                <div class="col-sm-4 col-lg-3 form-group">
+                                    <input type="range" min="0" max="255" class="form-control input" placeholder="Vermelho Adicional" value="15">
+                                </div>
+                                <div class="col-sm-4 col-lg-3 form-group">
+                                    <input type="range" min="0" max="255" class="form-control input" placeholder="Verde Adicional" value="15">
+                                </div>
+                                <div class="col-sm-4 col-lg-3 form-group">
+                                    <input type="range" min="0" max="255" class="form-control input" placeholder="Azul Adicional" value="80">
+                                </div>
+                                <div class="col-lg-3 form-group">
+                                    <div class="output"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button id="startstop" class="btn btn-success">Iniciar</button>
+        </div>
+        <div class="row justify-content-center">
+            <div id="caleidoscopio" class="col-md-6 col-lg-4"></div>
+        </div>
+    </div>
+    <script>
+        navsTabs = document.querySelectorAll('.nav-tabs');
+        navsTabs.forEach(function (navsTab) {
+            let panels = document.querySelector('#' + navsTab.id + 'Content');
+            let tabs = navsTab.querySelectorAll(':not(.tab-content) .nav-item > .nav-link');
+            tabs.forEach(function (tab) {
+                tab.onclick = function () {
+                    tabs.forEach(function (tab) {
+                        tab.classList.remove('active')
+                        let panel = panels.querySelector(tab.attributes.href.value);
+                        panel.classList.remove('show');
+                        panel.classList.remove('active');
+                    });
+                    tab.classList.add('active');
+                    let panel = panels.querySelector(tab.attributes.href.value);
+                    panel.classList.add('show');
+                    panel.classList.add('active');
+
+                }
+            });
+        });
+
+        var style = document.createElement("style");
+        document.head.appendChild(style);
+        var sheet = style.sheet;
+        caleidoscopio = document.querySelector('#caleidoscopio');
+        caleidoscopio.getGradient = () => {
+            return 'linear-gradient(to right,'+caleidoscopio.colors.join(',')+')';
+        }
+        caleidoscopio.getKeyFrames = () => {
+            let rule = '@keyframes caleidoscopio {';
+            let perc = 0;
+            caleidoscopio.colors.forEach(color => {
+                rule += perc+'% {background-color: '+color+';}';
+                perc +=10;
+            });
+            rule += '}';
+            return rule;
+        }
+        caleidoscopio.arrayToHexadecimal = color => {
+            let hexa = '#';
+            color.forEach((e,i) => {
+                if (e > 255) color[i] -= 255;
+                hexa += color[i].toString(16).padStart(2,'0')
+            })
+            return hexa;
+        }
+        caleidoscopio.setColor = (color, sum) => {
+            if (sum !== undefined)
+                color.forEach((e,i) => {color[i] += sum[i];})
+            caleidoscopio.colors.push(caleidoscopio.arrayToHexadecimal(color));
+            return color;
+        };
+        caleidoscopio.setColors = () => {
+            caleidoscopio.colors = [];
+            let color = caleidoscopio.setColor(Object.values(caleidoscopio.initial));
+            for(var i = 0; i < 10;i++) {
+                color = caleidoscopio.setColor(color, caleidoscopio.incremental);
+            };
+        };
+        caleidoscopio.startstop = () => {
+            caleidoscopio.playing = !caleidoscopio.playing;
+            let playing = caleidoscopio.playing;
+
+            let inputs = document.querySelectorAll('.set-caleidoscopio .input');
+            inputs.forEach(input => {
+                input.disabled = !input.disabled;
+            });
+
+            let style = caleidoscopio.style;
+            style.animationName = playing ? 'caleidoscopio' : '';
+            style.animationDuration = playing ? '2.75s' : '';
+            style.animationDelay = playing ? '0s' : '';
+            style.animationIterationCount = playing ? 'infinite' : '';
+
+            if (playing) {
+                caleidoscopio.rule = sheet.insertRule(caleidoscopio.getKeyFrames());
+                return;
+            }
+            sheet.removeRule(caleidoscopio.rule);
+        }
+
+        startstop = document.querySelector('#startstop');
+        startstop.onclick = () => {
+            caleidoscopio.startstop()
+            let playing = caleidoscopio.playing;
+            startstop.textContent = playing ? 'Parar' : 'Iniciar';
+            startstop.classList.remove(playing ? 'btn-success' : 'btn-warning');
+            startstop.classList.add(playing ? 'btn-warning' : 'btn-success');
+        }
+
+        apps = document.querySelectorAll('.set-caleidoscopio');
+        apps.forEach(app => {
+            function onChangeInput() {
+                caleidoscopio.initial = initial.getRgb();
+                initial.output.style.backgroundColor = caleidoscopio.arrayToHexadecimal(caleidoscopio.initial);
+
+                caleidoscopio.incremental = incremental.getRgb();
+                incremental.output.style.backgroundColor = caleidoscopio.arrayToHexadecimal(caleidoscopio.initial);
+                incremental.output.style.backgroundColor = caleidoscopio.initial;
+
+                caleidoscopio.setColors();
+                incremental.output.style.backgroundImage = caleidoscopio.getGradient();
+            }
+
+            function constructColor(role) {
+                let color = app.querySelector('div.color[role='+role+']');
+                color.inputs = color.querySelectorAll('.input');
+                color.output = color.querySelector('.output');
+                color.getRgb = () => {
+                    let rgb = [];
+                    color.inputs.forEach(input => {
+                        rgb.push(
+                            (input.type == 'range') ? parseInt(input.value) : parseInt(input.value,16)
+                        );
+                    })
+                    return rgb;
+                }
+                color.inputs.forEach(input => {
+                    input.onchange = onChangeInput;
+                })
+                return color;
+            }
+
+            let initial = constructColor('initial');
+            let incremental = constructColor('incremental');
+            incremental.inputs[0].onchange();
+        });
+    </script>
+</body>
+
+</html>
